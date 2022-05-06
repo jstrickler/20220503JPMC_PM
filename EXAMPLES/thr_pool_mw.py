@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from multiprocessing.dummy import Pool  # <1>
 import requests
+import time
 
 POOL_SIZE = 4
 
@@ -48,12 +49,15 @@ def get_data_serial():
 
 def main():
     for function in get_data_threaded, get_data_serial:
+        start_time = time.time()
         results = function()
+        print(function.__name__, time.time() - start_time)
         for search_term, result in zip(SEARCH_TERMS, results):  # <12>
-            results = function()
-            for result in
             print("{}:".format(search_term.upper()), end=" ")
             if result:
                 print(result)
             else:
                 print("** no results **")
+
+if __name__ == '__main__':
+    main()

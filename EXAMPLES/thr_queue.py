@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 import random
+import pdb
 import queue
 from threading import Thread, Lock as tlock
 import time
 
 NUM_ITEMS = 25000
-POOL_SIZE = 100
+POOL_SIZE = 64
 
 q = queue.Queue(0)  # <1>
 
@@ -33,10 +34,12 @@ class Worker(Thread):  # <4>
     def run(self):  # <6>
         while True:
             try:
-                s1 = q.get(block=False)  # <7>
-                s2 = s1.upper() + '-' + s1.upper()
+                str_in = q.get(block=False)  # <7>
+                # if self.name == "Worker A":
+                #    pdb.set_trace()  # debugger breakpoint
+                str_out = str_in.upper()
                 with shlist_lock:  # <8>
-                    shared_list.append(s2)
+                    shared_list.append(str_out)
 
             except queue.Empty:  # <9>
                 break
