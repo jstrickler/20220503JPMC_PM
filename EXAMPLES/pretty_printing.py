@@ -24,3 +24,7 @@ print()
 print('With pprint (depth=2):')
 pprint(struct, depth=2)  # <4>
 print()
+
+print('With pprint (depth=1):')
+pprint(struct, depth=1)  # <4>
+print()

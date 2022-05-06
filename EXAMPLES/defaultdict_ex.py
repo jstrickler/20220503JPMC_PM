@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 from collections import defaultdict
 
+def zero():
+    return 0
+
 dd = defaultdict(lambda: 0)  # <1>
 
 dd['spam'] = 10  # <2>
@@ -9,6 +12,8 @@ dd['eggs'] = 22
 print(dd['spam'])  # <3>
 print(dd['eggs'])
 print(dd['foo'])  # <4>
+print("dd: {}".format(dd))
+
 
 print('-' * 60)
 

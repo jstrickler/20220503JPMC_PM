@@ -10,6 +10,7 @@ print((list(count_by(1))))  # <2>
 print((list(count_by(3))))  # <2>
 print((list(count_by(5))))  # <2>
 print()
+# re.search(pattern, string)
 
 has_a_number = partial(re.search, r'\d+')  # <3>
 

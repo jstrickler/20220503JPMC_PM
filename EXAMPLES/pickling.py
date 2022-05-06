@@ -30,3 +30,9 @@ with open('../TEMP/pickled_data.pic', 'rb') as pic_in:  # <5>
     pickled_data = pickle.load(pic_in)  # <6>
 
 pprint(pickled_data)  # <7>
+print('-' * 60)
+
+pickled_data = pickle.dumps(data)
+print(type(pickled_data))
+data_clone = pickle.loads(pickled_data)
+pprint(data_clone)

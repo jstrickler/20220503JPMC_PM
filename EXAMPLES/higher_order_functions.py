@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 #
+import operator as op
 
 fruits = ["pomegranate", "cherry", "apricot", "date", "apple",
           "lemon", "kiwi", "orange", "lime", "watermelon", "guava",
@@ -26,3 +27,15 @@ print(f3, "\n")
 total_length = sum(process_list(fruits, len))  # <6>
 
 print(total_length, "\n")
+
+def process_pair(func, a, b):
+    return func(a, b)
+
+print(process_pair(op.add, 10, 15))
+print(process_pair(op.mul, 10, 15))
+print(process_pair(op.truediv, 10, 15))
+print(process_pair(lambda x, y: x + y, 10, 15))
+
+getter = op.itemgetter(2, 9, 3)
+
+print(getter(fruits))

@@ -9,12 +9,12 @@ class StrDict(dict):
             raise TypeError("Value must be a string")
 
         key = key.strip().lower()
-        value = value.strip().lower()
+        value = ''.join(value.split()).strip().lower()
         super(StrDict, self).__setitem__(key, value)
 
 if __name__ == '__main__':
     s = StrDict()
-    for k, v in ('a', 'b'), ('a', 1), (1, 'b'), (1, 1):
+    for k, v in ('ab cd', '  b   b   b    '), ('    a     ', 1), (1, 'b'), (1, 1):
         try:
             s[k] = v
         except TypeError as err:

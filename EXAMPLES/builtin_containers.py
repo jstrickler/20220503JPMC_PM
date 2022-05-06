@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 alist = ['alpha', 'beta', 'gamma', 'eta', 'zeta']
-atuple = ('123 Elm Street', 'Toledo', 'Ohio')
+atuple = '123 Elm Street', 'Toledo', 'Ohio'
 adict = {'alpha': 5, 'beta': 10, 'gamma': 15}
 aset = {'alpha', 'beta', 'gamma', 'eta', 'zeta'}
 
